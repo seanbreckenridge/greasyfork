@@ -25,4 +25,4 @@ An archive of my greasyfork scripts.
 [Hide PTW Only Recommendations](./hide_ptw_only_recommendations.js) | If graph.anime.plus gives a recommendation which only has something related on your PTW, hide those recommendations. | 4 | [link](https://greasyfork.org//en/scripts/40945-hide-ptw-only-recommendations)
 [Change MAL Friends link in Menu](./change_mal_friends_link_in_menu.js) | Changes the Friends link in the profile dropdown to the friends page linked to your profile | 2 | [link](https://greasyfork.org//en/scripts/380944-change-mal-friends-link-in-menu)
 
-###### Created with [greasyfork_repo_generator](https://gitub.com/seanbreckenridge/greasyfork_repo_generator)
+###### Created with [greasyfork_repo_generator](https://github.com/seanbreckenridge/greasyfork_repo_generator)
