@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MyAnimeList Hide Manga Store
 // @namespace    https://greasyfork.org/en/users/96096-purplepinapples
-// @version      0.5
+// @version      0.6
 // @description  Hides the Manga Store Ads on MyAnimeList.
 // @author       PurplePinapples
 // @match        https://myanimelist.net/*
@@ -16,12 +16,15 @@
     $(".manga-store-preview").hide();
     $(".manga-store-information").hide();
     $(".btn-affiliate.manga-store").hide();
-    $(".btn-forum-manga-store").hide();
-    // if we're on the forum
-    if (window.location.href.indexOf("topicid=") == -1) {
-        $("h2:contains('Manga Store')").parent().parent().hide();
-    //on anime/manga page
+   $(".btn-forum-manga-store").hide();
+     // if we're on the forum
+    if (window.location.href.indexOf("topicid=") != -1) {
+         $("h2:contains('Manga Store')").parent().parent().hide();
     } else {
-        $('h2:contains("Manga Store")').parent().hide();
+        //on anime/manga page
+        let c = window.location.href
+        if (c.indexOf("/anime/") != -1 || c.indexOf("/manga/") != -1 || c.indexOf("anime.php?id=") != -1 || c.indexOf("manga.php?id=") != -1) {
+          $('h2:contains("Manga Store")').parent().hide();
+        }
     }
 })();
