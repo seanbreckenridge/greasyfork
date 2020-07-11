@@ -6,6 +6,7 @@
 // @author       PurplePinapples
 // @match        https://myanimelist.net/*
 // @exclude      /^https:\/\/myanimelist\.net\/(anime|manga)list\/*
+// @license      WTFPL
 // ==/UserScript==
 
 (function() {
