@@ -11,14 +11,14 @@
 
 // doesnt seem to appear as soon as the page loads, try every 500ms if it fails
 function hideItem() {
-    const homeLi = document.querySelector('.subnav li.divider:nth-child(2)');
-    if (homeLi) {
-      homeLi.style.display = 'none';
-    } else {
-      setTimeout(() => hideItem(), 500); 
-    }
+  const homeLi = document.querySelector(".subnav li.divider:nth-child(2)");
+  if (homeLi) {
+    homeLi.style.display = "none";
+  } else {
+    setTimeout(() => hideItem(), 500);
+  }
 }
 
-(function() {
+(function () {
   hideItem();
 })();

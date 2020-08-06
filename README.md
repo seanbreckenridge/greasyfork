@@ -24,7 +24,7 @@ An archive of my greasyfork scripts.
 [Open Aired Entries](./open_aired_entries.js) | Opens the first 15 entries on your PTW that are currently airing or that have aired | 6 | [link](https://greasyfork.org/en/scripts/37562-open-aired-entries)
 [Hide PTW Only Recommendations](./hide_ptw_only_recommendations.js) | If graph.anime.plus gives a recommendation which only has something related on your PTW, hide those recommendations | 6 | [link](https://greasyfork.org/en/scripts/40945-hide-ptw-only-recommendations)
 [Add Hide All Recommendations Button](./add_hide_all_recommendations_button.js) | Adds a button to hide an entire group of recomendations | 5 | [link](https://greasyfork.org/en/scripts/40948-add-hide-all-recommendations-button)
+[Letterboxd Hide Home in Menu](./letterboxd_hide_home_in_menu.js) | Hide the Home Button in the profile dropdown menu | 3 | [link](https://greasyfork.org/en/scripts/408310-letterboxd-hide-home-in-menu)
 [Change MAL Friends link in Menu](./change_mal_friends_link_in_menu.js) | Changes the Friends link in the profile dropdown to the friends page linked to your profile | 2 | [link](https://greasyfork.org/en/scripts/380944-change-mal-friends-link-in-menu)
-[Letterboxd Hide Home in Menu](./letterboxd_hide_home_in_menu.js) | Hide the Home Button in the profile dropdown menu | 1 | [link](https://greasyfork.org/en/scripts/408310-letterboxd-hide-home-in-menu)
 
 ###### Created with [greasyfork_repo_generator](https://github.com/seanbreckenridge/greasyfork_repo_generator)
