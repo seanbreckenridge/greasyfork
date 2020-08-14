@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MyAnimeList Auto-Confirm updated entry
 // @namespace    https://greasyfork.org/en/users/96096-purple-pinapples
-// @version      0.2.0
+// @version      0.2.2
 // @description  Automatically goes back to anime page after successfully updating an entry
 // @author       PurplePinapples
 // @license      WTFPL
@@ -18,16 +18,36 @@
 // @match        https://myanimelist.net/ownlist/manga/add?selected_manga_id=*
 // @match        https://myanimelist.net/dbchanges.php?aid=*
 // @match        https://myanimelist.net/dbchanges.php?mid=*
+// @match        https://myanimelist.net/myfriends.php?go=*
 // @grant        none
 // ==/UserScript==
 
-(function() {
-    'use strict';
-    if ($("#content > .goodresult > strong:contains('Successfully')").length > 0) {
-        location.href = $("#content > .goodresult > a:last-child").attr("href");
+(function () {
+  "use strict";
+  if (
+    $("#content > .goodresult > strong:contains('Successfully')").length > 0
+  ) {
+    location.href = $("#content > .goodresult > a:last-child").attr("href");
+  }
+  // structure for DB pages is slightly different
+  if (
+    location.href.indexOf("dbchanges") !== -1 &&
+    $(".goodresult:contains('Successfully')").length > 0
+  ) {
+    location.href = $(
+      ".goodresult:contains('Successfully') > a:last-child"
+    ).attr("href");
+  }
+
+  // structure for friend add page is slightly different as well
+  // includes a couple of differnet pages, adding/removing friends, approving/denying requests
+  if (location.href.indexOf("myfriends.php") !== -1) {
+    // do this more manually, since the 'successfully' text can be upper/lowercase
+    const result = $(".goodresult");
+    if (result.length > 0) {
+      if (result.text().toLowerCase().indexOf("successfully") !== -1) {
+        location.href = result.find("a[href*='profile']").attr("href");
+      }
     }
-    // structure for DB pages is slightly different
-    if (location.href.indexOf("dbchanges") != -1 && $(".goodresult:contains('Successfully')").length > 0) {
-        location.href = $(".goodresult:contains('Successfully') > a:last-child").attr("href");
-    }
+  }
 })();
