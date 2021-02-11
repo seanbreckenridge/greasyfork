@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name        AniList - Search Title on AnimeBytes
 // @namespace   https://greasyfork.org/en/users/96096-purplepinapples
-// @match       https://anilist.co/anime/*
+// @match       https://anilist.co/*
 // @grant       none
 // @run-at      document-end
-// @version     1.1
+// @version     1.2
 // @author      purplepinapples
 // @description adds a button on AniList anime pages to search AnimeBytes for the title
 // ==/UserScript==
