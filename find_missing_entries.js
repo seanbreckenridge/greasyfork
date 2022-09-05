@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Find Missing Entries
 // @namespace    https://greasyfork.org/en/users/96096
-// @version      1.0.3
+// @version      1.0.4
 // @description  Opens all pages on MAL that are not on your list.
 // @author       PurplePinapples
 // @license      WTFPL
@@ -42,8 +42,9 @@ function exit_script () {
             return;
         }
         //open pages not on your list
-        $("tr:has('a.Lightbox_AddEdit.button_add')").find("a:has('strong')").each(function() {
-            window.open($(this).attr("href"));
+        $('tr a.Lightbox_AddEdit[href*="ownlist/anime/add"]').each(function() {
+            const link = $(this).parent().find('a[href*="myanimelist.net/anime"')
+            window.open($(link).attr("href"));
         });
         if (location.href.indexOf("&show") === -1) {
             location.href = location.href + "&show=50";
