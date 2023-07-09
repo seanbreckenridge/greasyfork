@@ -8,4 +8,6 @@
 // @license      WTFPL
 // ==/UserScript==
 
-$('head').append('<style type="text/css">.fb-page {display: none !important;} .footer-link-icon-block {display: none !important;}.page-common #copyright{padding-top: 10px !important;}</style>');
+$("head").append(
+  '<style type="text/css">.fb-page {display: none !important;} .footer-link-icon-block {display: none !important;}.page-common #copyright{padding-top: 10px !important;}</style>'
+);

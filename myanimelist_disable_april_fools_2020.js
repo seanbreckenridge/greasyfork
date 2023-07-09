@@ -9,4 +9,4 @@
 // @run-at       document-end
 // ==/UserScript==
 
-document.querySelector("body").classList.remove("aprilfools_2020")
+document.querySelector("body").classList.remove("aprilfools_2020");

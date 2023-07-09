@@ -11,7 +11,7 @@
 // @run-at       document-end
 // ==/UserScript==
 
-(function() {
-    "use strict";
-    $("tr > td.borderClass > div > div > a > img.ac").hide();
+(function () {
+  "use strict";
+  $("tr > td.borderClass > div > div > a > img.ac").hide();
 })();

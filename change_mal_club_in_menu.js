@@ -9,7 +9,9 @@
 // @license      WTFPL
 // ==/UserScript==
 
-(function() {
-    'use strict';
-    $("#header-menu").find("ul>li:contains('Clubs')>a").attr("href", $(".header-profile-button").attr("href") + "/clubs");
+(function () {
+  "use strict";
+  $("#header-menu")
+    .find("ul>li:contains('Clubs')>a")
+    .attr("href", $(".header-profile-button").attr("href") + "/clubs");
 })();

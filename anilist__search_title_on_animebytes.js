@@ -10,7 +10,6 @@
 // ==/UserScript==
 
 (function () {
-
   function createSearchButton() {
     const navEl = document.querySelector(".content div.nav");
     if (navEl) {

@@ -10,10 +10,8 @@
 // @run-at       document-end
 // ==/UserScript==
 
-
-$("tr.ranking-list").each(function() {
-    if ($(this).find(".notinmylist").length === 0) {
-        $(this).hide();
-    }
+$("tr.ranking-list").each(function () {
+  if ($(this).find(".notinmylist").length === 0) {
+    $(this).hide();
+  }
 });
-

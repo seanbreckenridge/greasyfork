@@ -10,14 +10,14 @@
 // ==/UserScript==
 
 (() => {
-    "use strict";
-    // hmm -- since the new update just removing the class doesnt work -- need to do this manually
-    document.querySelectorAll(".seasonal-anime").forEach((anime_card) => {
-      if(anime_card.querySelector(".btn-anime-watch-status.dropped")) {
-        // settings this to None doesnt even work, it resets after a few seconds
-        // anime_card.style.display = "none";
-        // think removing it is the easiest thing to do -- user'll have to toggle with their userscript runner if they want to view dropped
-        anime_card.outerHTML = '';
-      }
-    });
+  "use strict";
+  // hmm -- since the new update just removing the class doesnt work -- need to do this manually
+  document.querySelectorAll(".seasonal-anime").forEach((anime_card) => {
+    if (anime_card.querySelector(".btn-anime-watch-status.dropped")) {
+      // settings this to None doesnt even work, it resets after a few seconds
+      // anime_card.style.display = "none";
+      // think removing it is the easiest thing to do -- user'll have to toggle with their userscript runner if they want to view dropped
+      anime_card.outerHTML = "";
+    }
+  });
 })();

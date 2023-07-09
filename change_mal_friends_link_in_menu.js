@@ -9,7 +9,9 @@
 // @exclude      https://myanimelist.net/mangalist/*
 // ==/UserScript==
 
-(function() {
-    'use strict';
-    $("#header-menu").find("ul>li:contains('Friends')>a").attr("href", $(".header-profile-button").attr("href") + "/friends");
+(function () {
+  "use strict";
+  $("#header-menu")
+    .find("ul>li:contains('Friends')>a")
+    .attr("href", $(".header-profile-button").attr("href") + "/friends");
 })();

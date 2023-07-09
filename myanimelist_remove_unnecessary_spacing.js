@@ -9,4 +9,6 @@
 // @run-at       document-end
 // ==/UserScript==
 
-$('head').append('<style type="text/css">\n .profile .user-profile-about\n{margin-bottom: 0px !important;\n}\n .page-common .pt24 \n{padding-top: 0px !important\n}\n</style>');
+$("head").append(
+  '<style type="text/css">\n .profile .user-profile-about\n{margin-bottom: 0px !important;\n}\n .page-common .pt24 \n{padding-top: 0px !important\n}\n</style>'
+);

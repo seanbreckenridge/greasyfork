@@ -8,7 +8,9 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
-    "use strict";
-     $('head').append('<style>a.title[href*="spoilers"]:visited {color: #c42fd8 !important}</style>');
+(function () {
+  "use strict";
+  $("head").append(
+    '<style>a.title[href*="spoilers"]:visited {color: #c42fd8 !important}</style>'
+  );
 })();

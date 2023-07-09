@@ -10,13 +10,14 @@
 // @run-at       document-end
 // ==/UserScript==
 
-(function() {
-    'use strict';
-    const css_selector = "h1 > strong"
-    let name = $(css_selector).text();
-    let commaIndex = name.indexOf(",");
-    if (commaIndex != -1) {
-        let swappedName = name.substring(commaIndex + 2) + " " + name.substring(0, commaIndex);
-        $(css_selector).html(swappedName);
-    }
+(function () {
+  "use strict";
+  const css_selector = "h1 > strong";
+  let name = $(css_selector).text();
+  let commaIndex = name.indexOf(",");
+  if (commaIndex != -1) {
+    let swappedName =
+      name.substring(commaIndex + 2) + " " + name.substring(0, commaIndex);
+    $(css_selector).html(swappedName);
+  }
 })();

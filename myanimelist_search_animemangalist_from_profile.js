@@ -10,69 +10,80 @@
 // ==/UserScript==
 
 function urlOpener(urlToOpen, events) {
-   if (events.ctrlKey || events.metaKey || events.which == 2) {
-      events.preventDefault(); // prevent middle click from opening tab, so it doesnt open twice.
-      window.open(urlToOpen, "_blank"); // new tab
+  if (events.ctrlKey || events.metaKey || events.which == 2) {
+    events.preventDefault(); // prevent middle click from opening tab, so it doesnt open twice.
+    window.open(urlToOpen, "_blank"); // new tab
   } else {
-      document.location.href = urlToOpen;
+    document.location.href = urlToOpen;
   }
 }
 
 (function () {
-    "use strict";
-  
-    // grab username
-    let username = $("h1 span").first().text().trim().split(" ")[0].slice(0, -2);
-  
-    // add CSS
-    $('head').append('<style>#search_container input {margin: 2px;margin-bottom: 5px;}#search_container button {padding: 1px;} #search_container {text-align: center; }</style>');
-     
-    // add input/search buttons
-    $(".user-button").after('<div id="search_container"><div><input id="animesearch_input" placeholder="AnimeList Search" size=23 /><button id="animesearch_button">🔍</button></div><div><input id="mangasearch_input" placeholder="MangaList Search" size=23 /><button id="mangasearch_button">🔍</button></div></div>');
+  "use strict";
 
-    let animebaseurl = `https://myanimelist.net/animelist/${username}?status=7&s=`;
-    let mangabaseurl = `https://myanimelist.net/mangalist/${username}?status=7&s=`;
-  
-    // attach events
+  // grab username
+  let username = $("h1 span").first().text().trim().split(" ")[0].slice(0, -2);
 
-    // anime search button
-    $("#animesearch_button").mouseup(function(e) {
-      var anime_url = animebaseurl + encodeURIComponent($("#animesearch_input").first().val().trim());
-      urlOpener(anime_url, e);
-    });
+  // add CSS
+  $("head").append(
+    "<style>#search_container input {margin: 2px;margin-bottom: 5px;}#search_container button {padding: 1px;} #search_container {text-align: center; }</style>"
+  );
 
-    // manga search button
-    $("#mangasearch_button").mouseup(function(e) {
-      var manga_url = mangabaseurl + encodeURIComponent($("#mangasearch_input").first().val().trim());
-      urlOpener(manga_url, e);
-    });
-      
-    // if user hits enter key, click the button
-    
-    $("#animesearch_input").on("enterKey", function(e) {
-      var anime_url = animebaseurl + encodeURIComponent($("#animesearch_input").first().val().trim());
-      urlOpener(anime_url, e);
-    });
+  // add input/search buttons
+  $(".user-button").after(
+    '<div id="search_container"><div><input id="animesearch_input" placeholder="AnimeList Search" size=23 /><button id="animesearch_button">🔍</button></div><div><input id="mangasearch_input" placeholder="MangaList Search" size=23 /><button id="mangasearch_button">🔍</button></div></div>'
+  );
 
-    $("#mangasearch_input").on("enterKey", function(e) {
-      var manga_url = mangabaseurl + encodeURIComponent($("#mangasearch_input").first().val().trim());
-      urlOpener(manga_url, e);      
-    });
-     
-    // anime input - map key code to enter event
+  let animebaseurl = `https://myanimelist.net/animelist/${username}?status=7&s=`;
+  let mangabaseurl = `https://myanimelist.net/mangalist/${username}?status=7&s=`;
 
-    $("#animesearch_input").keyup(function(e) {
-      if (e.keyCode == 13) {
-        $(this).trigger("enterKey");
-      }
-    });
-      
-    // manga input - may key code to enter event
+  // attach events
 
-    $("#mangasearch_input").keyup(function(e) {
-      if (e.keyCode == 13) {
-        $(this).trigger("enterKey");
-      }
-    });
-  
+  // anime search button
+  $("#animesearch_button").mouseup(function (e) {
+    var anime_url =
+      animebaseurl +
+      encodeURIComponent($("#animesearch_input").first().val().trim());
+    urlOpener(anime_url, e);
+  });
+
+  // manga search button
+  $("#mangasearch_button").mouseup(function (e) {
+    var manga_url =
+      mangabaseurl +
+      encodeURIComponent($("#mangasearch_input").first().val().trim());
+    urlOpener(manga_url, e);
+  });
+
+  // if user hits enter key, click the button
+
+  $("#animesearch_input").on("enterKey", function (e) {
+    var anime_url =
+      animebaseurl +
+      encodeURIComponent($("#animesearch_input").first().val().trim());
+    urlOpener(anime_url, e);
+  });
+
+  $("#mangasearch_input").on("enterKey", function (e) {
+    var manga_url =
+      mangabaseurl +
+      encodeURIComponent($("#mangasearch_input").first().val().trim());
+    urlOpener(manga_url, e);
+  });
+
+  // anime input - map key code to enter event
+
+  $("#animesearch_input").keyup(function (e) {
+    if (e.keyCode == 13) {
+      $(this).trigger("enterKey");
+    }
+  });
+
+  // manga input - may key code to enter event
+
+  $("#mangasearch_input").keyup(function (e) {
+    if (e.keyCode == 13) {
+      $(this).trigger("enterKey");
+    }
+  });
 })();
